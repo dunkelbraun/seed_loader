@@ -51,5 +51,5 @@ Run the seeds rake task
 
 == License
 
-Mobile Version is released under the MIT license.
+Seed Loader is released under the MIT license.
 
