@@ -5,8 +5,8 @@ dm_one:
 dm_two:
   field1: B
   field2: <%= 3 + 5 %>
-  dummy_user: user2
+  dummy_user: user1
 dm_three:
   field1: C
   field2: 3
-  dummy_user: user3
+  dummy_user: user1

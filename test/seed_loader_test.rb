@@ -32,8 +32,11 @@ class SeedLoaderTest < ActiveSupport::TestCase
   test "loading seed files into the database" do
     Dir.glob(File.dirname(__FILE__) + '/seeds/*').each { |file| FileUtils.cp file, File.dirname(__FILE__) + '/dummy/db/seeds' }
     SeedLoader::Loader.seed_files_to_db
-    assert_equal 3, DummyUser.all.length
-    assert_equal 3, DummyTable.all.length    
+    dummy_users = DummyUser.all
+    assert_equal 3, dummy_users.length
+    dummy_tables = DummyTable.all
+    assert_equal 3, dummy_tables.length
+    assert_equal "User1", dummy_tables.map(&:dummy_user).uniq[0].name
   end
 
   test "reset autoincrement" do
