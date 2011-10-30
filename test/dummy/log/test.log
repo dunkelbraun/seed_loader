@@ -1,0 +1,1376 @@
+  [1m[36m (345.7ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (46.3ms)[0m  SHOW KEYS FROM schema_migrations
+  [1m[36m (536.9ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mschema_migrations Columns (97.5ms)[0m  SHOW FIELDS FROM `schema_migrations`
+  [1m[36m (9.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreatePositions (20111027121542)
+  [1m[35m (153.4ms)[0m  CREATE TABLE `positions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `lat` decimal(14,8), `lng` decimal(14,8), `location` POINT NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=MyISAM
+  [1m[36m (138.9ms)[0m  [1mCREATE SPATIAL INDEX index_positions_on_location ON positions (location)[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20111027121542')
+  [1m[36mschema_migrations Columns (1.4ms)[0m  [1mSHOW FIELDS FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (1.4ms)[0m  [1mSHOW FIELDS FROM `positions`[0m
+  [1m[35m (68.5ms)[0m  show table status like 'positions'
+  [1m[36m (0.2ms)[0m  [1mSHOW KEYS FROM positions[0m
+  [1m[36m (33.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (80.9ms)[0m  [1mINSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:33:34', 40.4040849553955, -3.70101928710938, NULL, '2011-10-27 13:33:34')[0m
+Mysql2::Error: Column 'location' cannot be null: INSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:33:34', 40.4040849553955, -3.70101928710938, NULL, '2011-10-27 13:33:34')
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:33:34', 40.4040849553955, -3.70101928710938, NULL, '2011-10-27 13:33:34')
+Mysql2::Error: Column 'location' cannot be null: INSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:33:34', 40.4040849553955, -3.70101928710938, NULL, '2011-10-27 13:33:34')
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:34:38', 40.4040849553955, -3.70101928710938, NULL, '2011-10-27 13:34:38')[0m
+Mysql2::Error: Column 'location' cannot be null: INSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:34:38', 40.4040849553955, -3.70101928710938, NULL, '2011-10-27 13:34:38')
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:34:38', 40.4040849553955, -3.70101928710938, NULL, '2011-10-27 13:34:38')
+Mysql2::Error: Column 'location' cannot be null: INSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:34:38', 40.4040849553955, -3.70101928710938, NULL, '2011-10-27 13:34:38')
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:37:35', 40.4040849553955, -3.70101928710938, 1, '2011-10-27 13:37:35')[0m
+Mysql2::Error: Cannot get geometry object from data you send to the GEOMETRY field: INSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:37:35', 40.4040849553955, -3.70101928710938, 1, '2011-10-27 13:37:35')
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:37:35', 40.4040849553955, -3.70101928710938, 1, '2011-10-27 13:37:35')
+Mysql2::Error: Cannot get geometry object from data you send to the GEOMETRY field: INSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:37:35', 40.4040849553955, -3.70101928710938, 1, '2011-10-27 13:37:35')
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:39:28', 40.4040849553955, -3.70101928710938, 1, '2011-10-27 13:39:28')[0m
+Mysql2::Error: Cannot get geometry object from data you send to the GEOMETRY field: INSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:39:28', 40.4040849553955, -3.70101928710938, 1, '2011-10-27 13:39:28')
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:39:28', 40.4040849553955, -3.70101928710938, 1, '2011-10-27 13:39:28')
+Mysql2::Error: Cannot get geometry object from data you send to the GEOMETRY field: INSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:39:28', 40.4040849553955, -3.70101928710938, 1, '2011-10-27 13:39:28')
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mpositions Columns (1.0ms)[0m  SHOW FIELDS FROM `positions`
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (139.6ms)[0m  INSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:39:59', 40.4040849553955, -3.70101928710938, GeomFromWKB(0x01010000006EA8BEB50CE31A41DB17350903105141,4326), '2011-10-27 13:39:59')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `positions` (`created_at`, `lat`, `lng`, `location`, `updated_at`) VALUES ('2011-10-27 13:39:59', 40.4040849553955, -3.70101928710938, GeomFromWKB(0x01010000006EA8BEB50CE31A41DB17350903105141,4326), '2011-10-27 13:39:59')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (23.9ms)[0m  UPDATE `positions` SET `location` = GeomFromWKB(0x0101000000C55F8C44A7F11A413806E6D5E0815141,4326), `updated_at` = '2011-10-27 13:39:59', `lat` = 41.45444 WHERE `positions`.`id` = 2
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (2.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDummyTables (20111027142111)
+  [1m[35m (0.4ms)[0m  CREATE TABLE "dummy_tables" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "field1" varchar(255), "field2" integer, "dummy_user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111027142111')[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("dummy_tables")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDummyTables (20111027142111)
+Migrating to CreateDummyUsers (20111027142236)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "dummy_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111027142236')
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("dummy_tables")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("dummy_users")
+  [1m[36mDummyUser Load (13.7ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35mDummyUser Load (0.1ms)[0m  SELECT "dummy_users".* FROM "dummy_users" 
+
+***** Debugger requested, but was not available (ensure ruby-debug is listed in Gemfile/installed as gem): Start server with --debugger to enable *****
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35mDummyUser Load (0.1ms)[0m  SELECT "dummy_users".* FROM "dummy_users" 
+
+***** Debugger requested, but was not available (ensure ruby-debug is listed in Gemfile/installed as gem): Start server with --debugger to enable *****
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35mDummyUser Load (0.1ms)[0m  SELECT "dummy_users".* FROM "dummy_users" 
+  [1m[36mSQL (22.7ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.3ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (44.6ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:38:57 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 16:38:57 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:38:57 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 16:38:57 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:38:57 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 16:38:57 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:38:57 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 16:38:57 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:38:57 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 16:38:57 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:38:57 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 16:38:57 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+Loading seeds for DummyTable
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+Loading seeds for DummyUser
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:40:21 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 16:40:21 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:40:21 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 16:40:21 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:40:21 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 16:40:21 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:40:21 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 16:40:21 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:40:21 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 16:40:21 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:40:21 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 16:40:21 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:40:47 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 16:40:47 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:40:47 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 16:40:47 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:40:47 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 16:40:47 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:40:47 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 16:40:47 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:40:47 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 16:40:47 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:40:47 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 16:40:47 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.1ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 16:47:59 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.7ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 16:49:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mUPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';[0m
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 16:54:04 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (44.0ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 19:45:23 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+Mysql2::Error: Can't create database 'seed_loader_dummy_database'; database exists: CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE `dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB[0m
+Mysql2::Error: Table 'dummy_users' already exists: CREATE TABLE `dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (19.4ms)[0m  [1mINSERT INTO `dummy_users` VALUES(DEFAULT)[0m
+  [1m[35m (20.4ms)[0m  COMMIT
+  [1m[36mSQL (23.3ms)[0m  [1mDELETE FROM `dummy_users`[0m
+  [1m[35m (212.0ms)[0m  ALTER TABLE dummy_users AUTO_INCREMENT=1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (33.9ms)[0m  INSERT INTO `dummy_users` VALUES(DEFAULT)
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.6ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 19:45:48 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+Mysql2::Error: Can't create database 'seed_loader_dummy_database'; database exists: CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE `dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB[0m
+Mysql2::Error: Table 'dummy_users' already exists: CREATE TABLE `dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `dummy_users` VALUES(DEFAULT)[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `dummy_users`[0m
+  [1m[35m (162.1ms)[0m  ALTER TABLE dummy_users AUTO_INCREMENT=1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `dummy_users` VALUES(DEFAULT)
+  [1m[36m (40.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (74.8ms)[0m  DROP DATABASE IF EXISTS `seed_loader_dummy_database`
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.8ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 19:51:15 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE `dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB[0m
+Mysql2::Error: Table 'dummy_users' already exists: CREATE TABLE `dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB
+Mysql2::Error: Table 'seed_loader_dummy_database.dummy_users' doesn't exist: SHOW FIELDS FROM `dummy_users`
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.2ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (44.1ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:14:16 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+Mysql2::Error: Can't create database 'seed_loader_dummy_database'; database exists: CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (62.9ms)[0m  [1mCREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:15:08 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 20:15:08 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:15:08 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 20:15:08 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:15:08 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 20:15:08 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:15:08 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 20:15:08 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:15:08 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 20:15:08 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:15:08 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 20:15:08 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:15:08 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:15:08 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:15:09 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:15:09 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+Mysql2::Error: Can't create database 'seed_loader_dummy_database'; database exists: CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB[0m
+Mysql2::Error: Table 'mysql_dummy_users' already exists: CREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:18:12 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+Mysql2::Error: Can't create database 'seed_loader_dummy_database'; database exists: CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+Mysql2::Error: Table 'mysql_dummy_users' already exists: CREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.9ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:18:57 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+Mysql2::Error: Can't create database 'seed_loader_dummy_database'; database exists: CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+Mysql2::Error: Table 'mysql_dummy_users' already exists: CREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'[0m
+PGError: ERROR:  database "seed_loader_dummy_database" already exists
+: CREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'
+  [1m[35m (3.0ms)[0m  CREATE TABLE "postgres_dummy_users" ("id" serial primary key, "name" character varying(255)) 
+PGError: ERROR:  relation "postgres_dummy_users" already exists
+: CREATE TABLE "postgres_dummy_users" ("id" serial primary key, "name" character varying(255)) 
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"  [["name", "AnotherTestUser"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "postgres_dummy_users"
+  [1m[36m (0.4ms)[0m  [1mALTER SEQUENCE postgres_dummy_users_id_seq RESTART WITH 1;[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "AnotherTestUser"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (1.3ms)[0m  [1mDROP TABLE "postgres_dummy_users"[0m
+  [1m[35m (112.4ms)[0m  DROP DATABASE IF EXISTS "seed_loader_dummy_database"
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.9ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:31:17 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+Mysql2::Error: Can't create database 'seed_loader_dummy_database'; database exists: CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+Mysql2::Error: Table 'mysql_dummy_users' already exists: CREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `mysql_dummy_users`[0m
+  [1m[35m (167.9ms)[0m  ALTER TABLE mysql_dummy_users AUTO_INCREMENT=1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')
+  [1m[36m (12.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  DROP TABLE `mysql_dummy_users`
+  [1m[36m (35.9ms)[0m  [1mDROP DATABASE IF EXISTS `seed_loader_dummy_database`[0m
+  [1m[35m (851.8ms)[0m  CREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'
+  [1m[36m (8.0ms)[0m  [1mCREATE TABLE "postgres_dummy_users" ("id" serial primary key, "name" character varying(255)) [0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "AnotherTestUser"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "postgres_dummy_users"[0m
+  [1m[35m (0.5ms)[0m  ALTER SEQUENCE postgres_dummy_users_id_seq RESTART WITH 1;
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"  [["name", "AnotherTestUser"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  DROP TABLE "postgres_dummy_users"
+  [1m[36m (0.3ms)[0m  [1mDROP DATABASE IF EXISTS "seed_loader_dummy_database"[0m
+PGError: ERROR:  cannot drop the currently open database
+: DROP DATABASE IF EXISTS "seed_loader_dummy_database"
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:31:46 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (66.0ms)[0m  [1mCREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mSQL (45.8ms)[0m  [1mDELETE FROM `mysql_dummy_users`[0m
+  [1m[35m (329.1ms)[0m  ALTER TABLE mysql_dummy_users AUTO_INCREMENT=1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  DROP TABLE `mysql_dummy_users`
+  [1m[36m (0.3ms)[0m  [1mDROP DATABASE IF EXISTS `seed_loader_dummy_database`[0m
+  [1m[35m (0.4ms)[0m  CREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'
+PGError: ERROR:  database "seed_loader_dummy_database" already exists
+: CREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'
+  [1m[36m (41.7ms)[0m  [1mCREATE TABLE "postgres_dummy_users" ("id" serial primary key, "name" character varying(255)) [0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "AnotherTestUser"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "postgres_dummy_users"[0m
+  [1m[35m (0.3ms)[0m  ALTER SEQUENCE postgres_dummy_users_id_seq RESTART WITH 1;
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"  [["name", "AnotherTestUser"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  DROP TABLE "postgres_dummy_users"
+  [1m[36m (110.6ms)[0m  [1mDROP DATABASE IF EXISTS "seed_loader_dummy_database"[0m
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:34:28 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (35.5ms)[0m  [1mCREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `mysql_dummy_users`[0m
+  [1m[35m (298.5ms)[0m  ALTER TABLE mysql_dummy_users AUTO_INCREMENT=1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  DROP TABLE `mysql_dummy_users`
+  [1m[36m (0.3ms)[0m  [1mDROP DATABASE IF EXISTS `seed_loader_dummy_database`[0m
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00], ["name", "User1"], ["updated_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00], ["name", "User2"], ["updated_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00], ["name", "User3"], ["updated_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Thu, 27 Oct 2011 20:35:06 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (40.8ms)[0m  [1mCREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `mysql_dummy_users`[0m
+  [1m[35m (223.7ms)[0m  ALTER TABLE mysql_dummy_users AUTO_INCREMENT=1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  DROP TABLE `mysql_dummy_users`
+  [1m[36m (0.3ms)[0m  [1mDROP DATABASE IF EXISTS `seed_loader_dummy_database`[0m
+  [1m[35m (285.9ms)[0m  CREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'
+  [1m[36m (6.7ms)[0m  [1mCREATE TABLE "postgres_dummy_users" ("id" serial primary key, "name" character varying(255)) [0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "AnotherTestUser"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "postgres_dummy_users"[0m
+  [1m[35m (0.4ms)[0m  ALTER SEQUENCE postgres_dummy_users_id_seq RESTART WITH 1;
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"  [["name", "AnotherTestUser"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  DROP TABLE "postgres_dummy_users"
+  [1m[36m (110.9ms)[0m  [1mDROP DATABASE IF EXISTS "seed_loader_dummy_database"[0m
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.2ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (111.8ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00], ["name", "User1"], ["updated_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00], ["name", "User2"], ["updated_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00], ["name", "User3"], ["updated_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 2], ["updated_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 16:34:01 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (148.2ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (342.5ms)[0m  [1mCREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (26.8ms)[0m  BEGIN
+  [1m[36mSQL (36.0ms)[0m  [1mINSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')[0m
+  [1m[35m (55.8ms)[0m  COMMIT
+  [1m[36mSQL (37.2ms)[0m  [1mDELETE FROM `mysql_dummy_users`[0m
+  [1m[35m (676.6ms)[0m  ALTER TABLE mysql_dummy_users AUTO_INCREMENT=1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')
+  [1m[36m (7.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (32.3ms)[0m  DROP TABLE `mysql_dummy_users`
+  [1m[36m (111.3ms)[0m  [1mDROP DATABASE IF EXISTS `seed_loader_dummy_database`[0m
+  [1m[35m (1956.3ms)[0m  CREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'
+  [1m[36m (108.0ms)[0m  [1mCREATE TABLE "postgres_dummy_users" ("id" serial primary key, "name" character varying(255)) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "AnotherTestUser"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "postgres_dummy_users"[0m
+  [1m[35m (0.4ms)[0m  ALTER SEQUENCE postgres_dummy_users_id_seq RESTART WITH 1;
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"  [["name", "AnotherTestUser"]]
+  [1m[36m (68.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (47.5ms)[0m  DROP TABLE "postgres_dummy_users"
+  [1m[36m (147.0ms)[0m  [1mDROP DATABASE IF EXISTS "seed_loader_dummy_database"[0m
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.2ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (56.1ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00], ["name", "User1"], ["updated_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00], ["name", "User2"], ["updated_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00], ["name", "User3"], ["updated_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 8], ["updated_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 22:57:16 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (13.3ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (186.9ms)[0m  [1mCREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `mysql_dummy_users`[0m
+  [1m[35m (338.3ms)[0m  ALTER TABLE mysql_dummy_users AUTO_INCREMENT=1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  DROP TABLE `mysql_dummy_users`
+  [1m[36m (0.3ms)[0m  [1mDROP DATABASE IF EXISTS `seed_loader_dummy_database`[0m
+  [1m[35m (1188.3ms)[0m  CREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'
+  [1m[36m (6.1ms)[0m  [1mCREATE TABLE "postgres_dummy_users" ("id" serial primary key, "name" character varying(255)) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "AnotherTestUser"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "postgres_dummy_users"[0m
+  [1m[35m (0.4ms)[0m  ALTER SEQUENCE postgres_dummy_users_id_seq RESTART WITH 1;
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"  [["name", "AnotherTestUser"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  DROP TABLE "postgres_dummy_users"
+  [1m[36m (109.4ms)[0m  [1mDROP DATABASE IF EXISTS "seed_loader_dummy_database"[0m
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.9ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00], ["name", "User1"], ["updated_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00], ["name", "User2"], ["updated_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00], ["name", "User3"], ["updated_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 8], ["updated_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 22:59:49 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (42.5ms)[0m  [1mCREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `mysql_dummy_users`[0m
+  [1m[35m (282.5ms)[0m  ALTER TABLE mysql_dummy_users AUTO_INCREMENT=1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  DROP TABLE `mysql_dummy_users`
+  [1m[36m (0.4ms)[0m  [1mDROP DATABASE IF EXISTS `seed_loader_dummy_database`[0m
+  [1m[35m (490.7ms)[0m  CREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'
+  [1m[36m (7.6ms)[0m  [1mCREATE TABLE "postgres_dummy_users" ("id" serial primary key, "name" character varying(255)) [0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "AnotherTestUser"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "postgres_dummy_users"[0m
+  [1m[35m (0.4ms)[0m  ALTER SEQUENCE postgres_dummy_users_id_seq RESTART WITH 1;
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"  [["name", "AnotherTestUser"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  DROP TABLE "postgres_dummy_users"
+  [1m[36m (112.8ms)[0m  [1mDROP DATABASE IF EXISTS "seed_loader_dummy_database"[0m
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00], ["name", "User1"], ["updated_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00], ["name", "User2"], ["updated_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00], ["name", "User3"], ["updated_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 8], ["updated_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35mDummyTable Load (0.1ms)[0m  SELECT "dummy_tables".* FROM "dummy_tables" 
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "dummy_users"
+  [1m[36m (0.1ms)[0m  [1mUPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 23:02:44 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mCREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (85.6ms)[0m  CREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `mysql_dummy_users`
+  [1m[36m (292.6ms)[0m  [1mALTER TABLE mysql_dummy_users AUTO_INCREMENT=1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE `mysql_dummy_users`[0m
+  [1m[35m (0.3ms)[0m  DROP DATABASE IF EXISTS `seed_loader_dummy_database`
+  [1m[36m (330.3ms)[0m  [1mCREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'[0m
+  [1m[35m (8.1ms)[0m  CREATE TABLE "postgres_dummy_users" ("id" serial primary key, "name" character varying(255)) 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"  [["name", "AnotherTestUser"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "postgres_dummy_users"
+  [1m[36m (0.3ms)[0m  [1mALTER SEQUENCE postgres_dummy_users_id_seq RESTART WITH 1;[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "AnotherTestUser"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (1.2ms)[0m  [1mDROP TABLE "postgres_dummy_users"[0m
+  [1m[35m (111.6ms)[0m  DROP DATABASE IF EXISTS "seed_loader_dummy_database"
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.9ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00], ["name", "User1"], ["updated_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00], ["name", "User2"], ["updated_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00], ["name", "User3"], ["updated_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 8], ["updated_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35mDummyUser Load (0.1ms)[0m  SELECT "dummy_users".* FROM "dummy_users" 
+  [1m[36mDummyTable Load (0.1ms)[0m  [1mSELECT "dummy_tables".* FROM "dummy_tables" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 23:05:04 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (77.9ms)[0m  [1mCREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `mysql_dummy_users`[0m
+  [1m[35m (261.7ms)[0m  ALTER TABLE mysql_dummy_users AUTO_INCREMENT=1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  DROP TABLE `mysql_dummy_users`
+  [1m[36m (0.3ms)[0m  [1mDROP DATABASE IF EXISTS `seed_loader_dummy_database`[0m
+  [1m[35m (341.4ms)[0m  CREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'
+  [1m[36m (8.4ms)[0m  [1mCREATE TABLE "postgres_dummy_users" ("id" serial primary key, "name" character varying(255)) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "AnotherTestUser"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "postgres_dummy_users"[0m
+  [1m[35m (0.3ms)[0m  ALTER SEQUENCE postgres_dummy_users_id_seq RESTART WITH 1;
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"  [["name", "AnotherTestUser"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  DROP TABLE "postgres_dummy_users"
+  [1m[36m (111.8ms)[0m  [1mDROP DATABASE IF EXISTS "seed_loader_dummy_database"[0m
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.9ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00], ["name", "User1"], ["updated_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00], ["name", "User2"], ["updated_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00], ["name", "User3"], ["updated_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 8], ["updated_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35mDummyUser Load (0.1ms)[0m  SELECT "dummy_users".* FROM "dummy_users" 
+  [1m[36mDummyTable Load (0.1ms)[0m  [1mSELECT "dummy_tables".* FROM "dummy_tables" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 23:05:20 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (34.9ms)[0m  [1mCREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `mysql_dummy_users`[0m
+  [1m[35m (230.3ms)[0m  ALTER TABLE mysql_dummy_users AUTO_INCREMENT=1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  DROP TABLE `mysql_dummy_users`
+  [1m[36m (0.3ms)[0m  [1mDROP DATABASE IF EXISTS `seed_loader_dummy_database`[0m
+  [1m[35m (744.8ms)[0m  CREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'
+  [1m[36m (6.5ms)[0m  [1mCREATE TABLE "postgres_dummy_users" ("id" serial primary key, "name" character varying(255)) [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "AnotherTestUser"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "postgres_dummy_users"[0m
+  [1m[35m (0.4ms)[0m  ALTER SEQUENCE postgres_dummy_users_id_seq RESTART WITH 1;
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"  [["name", "AnotherTestUser"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  DROP TABLE "postgres_dummy_users"
+  [1m[36m (109.1ms)[0m  [1mDROP DATABASE IF EXISTS "seed_loader_dummy_database"[0m
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00], ["name", "User1"], ["updated_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00], ["name", "User23"], ["updated_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00], ["name", "User3"], ["updated_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 8], ["updated_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35mDummyUser Load (0.1ms)[0m  SELECT "dummy_users".* FROM "dummy_users" 
+  [1m[36mDummyTable Load (0.1ms)[0m  [1mSELECT "dummy_tables".* FROM "dummy_tables" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 23:05:45 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  CREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (25.7ms)[0m  [1mCREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `mysql_dummy_users`[0m
+  [1m[35m (239.8ms)[0m  ALTER TABLE mysql_dummy_users AUTO_INCREMENT=1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  DROP TABLE `mysql_dummy_users`
+  [1m[36m (0.3ms)[0m  [1mDROP DATABASE IF EXISTS `seed_loader_dummy_database`[0m
+  [1m[35m (415.9ms)[0m  CREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'
+  [1m[36m (7.9ms)[0m  [1mCREATE TABLE "postgres_dummy_users" ("id" serial primary key, "name" character varying(255)) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "AnotherTestUser"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "postgres_dummy_users"[0m
+  [1m[35m (0.3ms)[0m  ALTER SEQUENCE postgres_dummy_users_id_seq RESTART WITH 1;
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"  [["name", "AnotherTestUser"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  DROP TABLE "postgres_dummy_users"
+  [1m[36m (109.8ms)[0m  [1mDROP DATABASE IF EXISTS "seed_loader_dummy_database"[0m
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.9ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00], ["name", "User1"], ["updated_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00], ["name", "User23"], ["updated_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00], ["name", "User3"], ["updated_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 8], ["updated_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35mDummyUser Load (0.1ms)[0m  SELECT "dummy_users".* FROM "dummy_users" 
+  [1m[36mDummyTable Load (0.1ms)[0m  [1mSELECT "dummy_tables".* FROM "dummy_tables" [0m
+  [1m[35mDummyTable Load (0.1ms)[0m  SELECT "dummy_tables".* FROM "dummy_tables" 
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "dummy_users"
+  [1m[36m (0.1ms)[0m  [1mUPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 23:06:15 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mCREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (63.5ms)[0m  CREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `mysql_dummy_users`
+  [1m[36m (277.4ms)[0m  [1mALTER TABLE mysql_dummy_users AUTO_INCREMENT=1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE `mysql_dummy_users`[0m
+  [1m[35m (5.9ms)[0m  DROP DATABASE IF EXISTS `seed_loader_dummy_database`
+  [1m[36m (390.6ms)[0m  [1mCREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'[0m
+  [1m[35m (8.0ms)[0m  CREATE TABLE "postgres_dummy_users" ("id" serial primary key, "name" character varying(255)) 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"  [["name", "AnotherTestUser"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "postgres_dummy_users"
+  [1m[36m (0.3ms)[0m  [1mALTER SEQUENCE postgres_dummy_users_id_seq RESTART WITH 1;[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "AnotherTestUser"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (1.3ms)[0m  [1mDROP TABLE "postgres_dummy_users"[0m
+  [1m[35m (109.6ms)[0m  DROP DATABASE IF EXISTS "seed_loader_dummy_database"
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00], ["name", "User1"], ["updated_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00], ["name", "User23"], ["updated_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00], ["name", "User3"], ["updated_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 8], ["updated_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35mDummyTable Load (0.1ms)[0m  SELECT "dummy_tables".* FROM "dummy_tables" 
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "dummy_users"
+  [1m[36m (0.1ms)[0m  [1mUPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 23:08:03 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mCREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (356.0ms)[0m  CREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')
+  [1m[36m (64.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (14.2ms)[0m  DELETE FROM `mysql_dummy_users`
+  [1m[36m (349.3ms)[0m  [1mALTER TABLE mysql_dummy_users AUTO_INCREMENT=1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (21.8ms)[0m  [1mDROP TABLE `mysql_dummy_users`[0m
+  [1m[35m (0.3ms)[0m  DROP DATABASE IF EXISTS `seed_loader_dummy_database`
+  [1m[36m (1641.7ms)[0m  [1mCREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'[0m
+  [1m[35m (7.9ms)[0m  CREATE TABLE "postgres_dummy_users" ("id" serial primary key, "name" character varying(255)) 
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"  [["name", "AnotherTestUser"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "postgres_dummy_users"
+  [1m[36m (0.4ms)[0m  [1mALTER SEQUENCE postgres_dummy_users_id_seq RESTART WITH 1;[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "AnotherTestUser"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (1.2ms)[0m  [1mDROP TABLE "postgres_dummy_users"[0m
+  [1m[35m (110.3ms)[0m  DROP DATABASE IF EXISTS "seed_loader_dummy_database"
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "dummy_tables"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_tables';
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "dummy_users"[0m
+  [1m[35m (0.1ms)[0m  UPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.9ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00], ["name", "User1"], ["updated_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00], ["name", "User23"], ["updated_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00], ["name", "User3"], ["updated_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00], ["dummy_user_id", 2], ["field1", "B"], ["field2", 8], ["updated_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00], ["dummy_user_id", 1], ["field1", "A"], ["field2", 1], ["updated_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "dummy_tables" ("created_at", "dummy_user_id", "field1", "field2", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00], ["dummy_user_id", 3], ["field1", "C"], ["field2", 3], ["updated_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mDummyUser Load (0.1ms)[0m  [1mSELECT "dummy_users".* FROM "dummy_users" [0m
+  [1m[35mDummyTable Load (0.1ms)[0m  SELECT "dummy_tables".* FROM "dummy_tables" 
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "dummy_users"
+  [1m[36m (0.1ms)[0m  [1mUPDATE sqlite_sequence SET seq=0 WHERE name='dummy_users';[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "dummy_users" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00], ["name", "AnotherTestUser"], ["updated_at", Sun, 30 Oct 2011 23:29:15 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mCREATE DATABASE `seed_loader_dummy_database` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (93.4ms)[0m  CREATE TABLE `mysql_dummy_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `mysql_dummy_users`
+  [1m[36m (326.2ms)[0m  [1mALTER TABLE mysql_dummy_users AUTO_INCREMENT=1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `mysql_dummy_users` (`name`) VALUES ('AnotherTestUser')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.8ms)[0m  [1mDROP TABLE `mysql_dummy_users`[0m
+  [1m[35m (0.3ms)[0m  DROP DATABASE IF EXISTS `seed_loader_dummy_database`
+  [1m[36m (314.8ms)[0m  [1mCREATE DATABASE "seed_loader_dummy_database" ENCODING = 'utf8'[0m
+  [1m[35m (7.9ms)[0m  CREATE TABLE "postgres_dummy_users" ("id" serial primary key, "name" character varying(255)) 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"  [["name", "AnotherTestUser"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "postgres_dummy_users"
+  [1m[36m (0.4ms)[0m  [1mALTER SEQUENCE postgres_dummy_users_id_seq RESTART WITH 1;[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "postgres_dummy_users" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "AnotherTestUser"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (1.2ms)[0m  [1mDROP TABLE "postgres_dummy_users"[0m
+  [1m[35m (109.9ms)[0m  DROP DATABASE IF EXISTS "seed_loader_dummy_database"

@@ -1,0 +1,12 @@
+dm_one:
+  field1: A
+  field2: 1
+  dummy_user: user1
+dm_two:
+  field1: B
+  field2: <%= 3 + 5 %>
+  dummy_user: user2
+dm_three:
+  field1: C
+  field2: 3
+  dummy_user: user3

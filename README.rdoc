@@ -1,0 +1,55 @@
+= Seed Loader -- YAML seed file loading for Rails.
+
+Seed Loader enables you to write seed files in YAML and load them into the database.
+
+== Download and installation
+
+The latest version of Seed Loader can be installed with Rubygems:
+  % [sudo] gem install seed_loader
+
+Include the gem in your Gemfile:
+  gem 'seed_loader'
+  
+Source code can be downloaded from Github:
+
+  * http://github.com/dunkelbraun/seed_loader
+
+== Usage
+
+Put your YAML based seeds into db/seeds/model_table_name.yml
+  
+  For a Country model with attributes name and population, 
+  the seed file (db/seed/countries.yml) content would be:
+  
+  country_1:
+    name: Australia
+    population: 1233344
+
+
+  For belongs_to relationships, you can reference the relationship with the seed name.
+  If a City belongs to a country then:
+    city_1:
+      name: Melbourne
+      country: country_1
+    
+  You can also write ruby code inside the YAML seed files:
+    city_1:
+      name: Melbourne
+      country: country_1
+      founded_in: <= 30.years.ago.to_s(:db) >
+  
+
+In the db/seeds.rb file
+
+  SeedLoader::Loader.seed_files_to_db
+
+  
+Run the seeds rake task
+
+  rake db:seed
+
+
+== License
+
+Mobile Version is released under the MIT license.
+
