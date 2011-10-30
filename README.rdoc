@@ -19,7 +19,7 @@ Source code can be downloaded from Github:
 Put your YAML based seeds into db/seeds/model_table_name.yml
   
   For a Country model with attributes name and population, 
-  the seed file (db/seed/countries.yml) content would be:
+  the seed file (db/seeds/countries.yml) content would be:
   
   country_1:
     name: Australia
