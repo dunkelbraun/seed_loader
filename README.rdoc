@@ -36,7 +36,7 @@ Put your YAML based seeds into db/seeds/model_table_name.yml
     city_1:
       name: Melbourne
       country: country_1
-      founded_in: <= 30.years.ago.to_s(:db) >
+      founded_in: <%= 30.years.ago.to_s(:db) %>
   
 
 In the db/seeds.rb file
