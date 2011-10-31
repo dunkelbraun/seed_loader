@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = SeedLoader::VERSION
   s.authors     = ["Marc Essindi"]
   s.email       = ["marc.essindi@dunkelbraun.com"]
-  s.homepage    = "https://github.com/dunkelbraun/Seed-Loader"
+  s.homepage    = "https://github.com/dunkelbraun/seed_loader"
   s.summary     = "YAML seed file loading for Rails."
 
   s.rubyforge_project = "seed_loader"
